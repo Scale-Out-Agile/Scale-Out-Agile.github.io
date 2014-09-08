@@ -1,0 +1,9 @@
+{
+  "name": "Scale-Out-Agile",
+  "main": [
+    "Gruntfile.js"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3"
+  }
+}
