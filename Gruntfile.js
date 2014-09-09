@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 
     // Before generating any new files, remove files from previous build.
     clean: {
-      example: ['<%= site.dest %>/*.html'],
+      site: ['<%= site.dest %>/**/*.*', '<%= site.dest %>/*/*/', '<%= site.dest %>/*/']
     },
 
 
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         flatten: true,
-        production: false,
+        production: true,
         assets: '<%= site.assets %>',
         postprocess: require('pretty'),
 
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
         helpers: '<%= site.helpers %>',
         plugins: '<%= site.plugins %>'
       },
-      example: {
+      site: {
         files: {'<%= site.dest %>/': ['<%= site.templates %>/*.hbs']}
       }
     },
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
           '<%= site.theme %>/bootstrap',
           '<%= site.theme %>/components',
           '<%= site.theme %>/utils'
-        ],
+        ]
       },
       site: {
         src: ['<%= site.theme %>/site.less'],
