@@ -82,13 +82,17 @@ module.exports = function (grunt) {
         },
 
 
-        // Copy Bootstrap's assets to site assets
         copy: {
+            // Copy Bootstrap's assets to site assets
             assets: {
                 files: [
           { expand: true, cwd: '<%= bootstrap %>/dist/fonts', src: ['*.*'], dest: '<%= site.assets %>/fonts/' },
           { expand: true, cwd: '<%= bootstrap %>/dist/js', src: ['*.*'], dest: '<%= site.assets %>/js/' },
         ]
+            },
+            // Copy the build dir to the root directory
+            ghpages: {
+                files: [{ expand: true, cwd: '<%= site.dest %>', src: ['**'], dest: ''}]
             }
         },
 
@@ -114,6 +118,32 @@ module.exports = function (grunt) {
                     branch: 'master'
                 }
             }
+        },
+
+        gitstash: {
+            save: {
+                options: {
+                    command: 'save',
+                    create: true,
+                    stash: 6
+                }
+            },
+            restore: {
+                options: {
+                    command: 'apply',
+                    staged: true,
+                    stash: 6
+                }
+            }
+        },
+
+        gitcommit: {
+            deploy: {
+                options: {
+                    message: 'Deploy latest to production.'
+                },
+                files: ['**']
+            }
         }
     });
 
@@ -130,11 +160,17 @@ module.exports = function (grunt) {
 
     // Build HTML, compile LESS and watch for changes. You must first run "bower install"
     // or install Bootstrap to the "vendor" directory before running this command.
-    grunt.registerTask('design', ['clean', 'assemble', 'less:site', 'watch:site']);
+    grunt.registerTask('design', ['clean', 'assemble', 'less', 'watch:site']);
 
     grunt.registerTask('docs', ['readme', 'sync']);
 
     grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
 
-    grunt.registerTask('deploy', ['gitcheckout:master', 'gitcheckout:src']);
+    grunt.registerTask('deploy', [
+        'gitstash:save', 'gitcheckout:master',
+        'copy:ghpages', 'gitcommit:deploy',
+        'gitcheckout:src', 'gitstash:restore'
+    ]);
+
+    grunt.registerTask('recover', ['gitstash:restore']);
 };
