@@ -124,15 +124,13 @@ module.exports = function (grunt) {
             save: {
                 options: {
                     command: 'save',
-                    create: true,
-                    stash: 6
+                    create: true
                 }
             },
             restore: {
                 options: {
-                    command: 'apply',
-                    staged: true,
-                    stash: 6
+                    command: 'pop',
+                    staged: true
                 }
             }
         },
@@ -140,9 +138,13 @@ module.exports = function (grunt) {
         gitcommit: {
             deploy: {
                 options: {
-                    message: 'Deploy latest to production.'
+                    message: 'Deploy latest to production.',
+                    all: true,
+                    include: true
                 },
-                files: ['**']
+                files: {
+                    src: ['\*\*/\*.\*']
+                }
             }
         }
     });
