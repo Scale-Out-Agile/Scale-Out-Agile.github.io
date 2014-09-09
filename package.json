@@ -1,23 +1,28 @@
 {
   "name": "Scale-Out-Agile",
-  "description": "Enabling 5,000 person groups to move with agility",
+  "description": "Enabling 5,000 person organizations to move with agility",
   "version": "0.1.0",
-  "homepage": "https://github.com/arlobelshee/Scale-Out-Agile",
+  "homepage": "https://Scale-Out-Agile.github.io/",
+  "contrib_root": "https://github.com/Scale-Out-Agile/Scale-Out-Agile.github.io/",
   "author": {
     "name": "Arlo Belshee",
     "url": "https://github.com/arlobelshee"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arlobelshee/Scale-Out-Agile.git"
+    "url": "https://github.com/Scale-Out-Agile/Scale-Out-Agile.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/arlobelshee/Scale-Out-Agile/issues"
+    "url": "https://github.com/Scale-Out-Agile/Scale-Out-Agile.github.io/issues"
   },
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/arlobelshee/Scale-Out-Agile/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "CC BY 3.0",
+      "url": "http://creativecommons.org/licenses/by/3.0/"
     }
   ],
   "main": "Gruntfile.js",
@@ -48,28 +53,7 @@
     "showup": "~0.1.2"
   },
   "keywords": [
-    "assemble boilerplate",
-    "assemble generator",
-    "assemble",
-    "assemble-contrib-wordcount",
-    "assembleboilerplate",
-    "blog generator",
-    "boilerplate",
-    "component generator",
-    "generator",
-    "grunt init template",
-    "grunt static site generator",
-    "handlebars",
-    "handlebars-helper-ghbtns",
-    "handlebars-helper-isactive",
-    "handlebars-helper-prettify",
-    "handlebars-helper-slugify",
-    "handlebars-helper-twitter",
-    "handlebars-helper-br",
-    "site generator",
-    "static site generator",
-    "templates",
-    "yeoman generator",
-    "yeoman static site generator"
+    "agile",
+    "scale"
   ]
 }

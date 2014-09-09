@@ -39,35 +39,37 @@ assemble:
   latest:         0.4.33  # change to <%= pkg.version %>
 
 # GitHub
-username:         assemble
-name:             assemble # change to <%= pkg.name %>
+username:         Scale-Out-Agile
+name:             Scale-Out-Agile.github.io
 download:
-  source:         <%= pkg.homepage %>/archive/master.zip
+  source:         <%= pkg.contrib_root %>/archive/master.zip
 
 
 # =============================================
 # Site metadata
 # =============================================
 
-brand:            ASSEMBLE
-title:            BOILERPLATE
-lead:             The most awe inspiring static site boilerplate in Northern Kentucky.
+brand:            Scale-Out Agile
+title:            Scale-Out Agile
+lead:             <%= pkg.description %>
 
 version:          <%= pkg.version %>
 description:      <%= pkg.description %>
 license:
   type:           <%= pkg.licenses[0].type %>
   url:            <%= pkg.licenses[0].url %>
-
+content_license:
+  type:           <%= pkg.licenses[1].type %>
+  url:            <%= pkg.licenses[1].url %>
 
 # Links
 url:
-  repo:           <%= pkg.homepage %>
+  repo:           <%= pkg.contrib_root %>
   bugs:           <%= pkg.bugs.url %>?state=open
-  ghpages:        https://<%= site.username %>.github.io/<%= pkg.name %>/
+  ghpages:        <%= pkg.homepage %>
 
   # Site
-  domain:         http://assemble.io/
+  domain:         <%= pkg.homepage %>
   about:          <%= site.url.domain %>/about/
   blog:           <%= site.url.domain %>/blog/
 
@@ -75,7 +77,7 @@ url:
 # SEO/SEM
 ga:
   id:             false
-  domain:         assemble.github.io
+  domain:         <%= site.username %>.github.io
   siteid:         false
   # Google Tags (see: https://www.google.com/tagmanager/)
   tags:           false
@@ -88,19 +90,19 @@ disqus:
 # Social
 social:
   twitter:
-    via:          assemblejs
-    username:     assemblejs
-    related:      jonschlinkert:Assemble core team.
+    via:          arlobelshee
+    username:     arlobelshee
+    related:      arlobelshee:Assemble core team.
   facebook:       false
-  linkedin:       false
+  linkedin:       true
   gplus:          false
-  hn:             false
+  hn:             true
   google:         false
 
 # Sharing
 sharing:
-  twitter:        false
-  facebook:       false
-  gplus:          false
-  hn:             false
+  twitter:        true
+  facebook:       true
+  gplus:          true
+  hn:             true
   google:         false
