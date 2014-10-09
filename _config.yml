@@ -14,7 +14,7 @@ templates:        templates
 includes:         <%= site.templates %>/includes/*.hbs
 layouts:          <%= site.templates %>/layouts
 layout:           default.hbs
-content:          content-md
+content:          content
 
 # Extensions
 helpers:          
