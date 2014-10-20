@@ -20,3 +20,5 @@ TODO.md
 _gh_pages
 temp
 tmp
+*.user
+*.suo

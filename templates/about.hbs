@@ -1,61 +1,85 @@
 ---
-layout: sidebar.hbs
+layout: default.hbs
 
 title: About
 slug: about
 lead: <%= site.description %>
 ---
 
+<div class="row">
+	<div class="col-md-3">
+		<div class="bs-sidebar hidden-print" role="complementary">
+			<ul class="nav bs-sidenav">
+				<li>
+					<a href="#history">History</a>
+				</li>
+				<li>
+					<a href="#team">Core team</a>
+				</li>
+				<li>
+					<a href="#community">Community</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-9" role="main">
+		{{! wrapped with 'wordcount' for wordcount plugin }}
+		<div class="wordcount">
 
-<!-- History -->
-<div class="bs-docs-section">
-  <div class="page-header">
-    <h1 id="history">History</h1>
-    {{! wordcount plugin }}
-    <span class="label-wordcount">&nbsp;words</span>,
-    <span class="label-reading-time">&nbsp;read</span>
-    {{! /wordcount plugin }}
+			<!-- History -->
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="history">History</h1>
+					{{! wordcount plugin }}
+					<span class="label-wordcount">&nbsp;words</span>,
+					<span class="label-reading-time">&nbsp;read</span>
+					{{! /wordcount plugin }}
 
-    {{> popover popover.wordcount }}
-  </div>
+					{{> popover popover.wordcount }}
+				</div>
+			</div>
+
+
+			<!-- Team -->
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="team">Core team</h1>
+				</div>
+				<p class="lead">Scale-Out Agile is maintained by the founding team, with the massive support and involvement of our community.</p>
+				<div class="list-group bs-team">
+					<div class="list-group-item">
+						<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=arlobelshee&amp;type=follow"></iframe>
+						<a class="team-member" href="https://github.com/arlobelshee">
+							<img src="http://www.gravatar.com/avatar/6995191364b77794684fbf3a3d6dacd7" alt="@arlobelshee">
+								<strong>Arlo Belshee</strong> <small>@arlobelshee</small>
+						</a>
+					</div>
+				</div>
+				<p>
+					Get involved with Scale-Out Agile by
+					<a href="https://github.com/Scale-Out-Agile/Scale-Out-Agile.github.io/issues/new">opening an issue</a> or submitting a pull request.
+				</p>
+			</div>
+
+			<!-- Community -->
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="community">Community</h1>
+				</div>
+				<div id="wordcount">
+					<p class="lead">Stay up to date on the development of Scale-Out Agile and reach out to the community with these helpful resources.</p>
+					<ul>
+						<!--      <li>Read and subscribe to <a href="http://blog.getbootstrap.com/">The Official Bootstrap Blog</a>.</li> -->
+						<!--      <li>Chat with fellow Bootstrappers using IRC in the <code>irc.freenode.net</code> server, in the <a href="irc://irc.freenode.net/#twitter-bootstrap">##twitter-bootstrap channel</a>.</li> -->
+						<!--      <li>Find inspiring examples of people building with Bootstrap at the <a href="http://expo.getbootstrap.com">Bootstrap Expo</a>.</li> -->
+						<li>
+							Contribute to the
+							<a href="https://github.com/Scale-Out-Agile/Scale-Out-Agile.github.io/wiki">Scale-Out wiki</a>.
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </div>
-
-
-<!-- Team -->
-{{> team }}
-
-
-<!-- Community -->
-<div class="bs-docs-section">
-  <div class="page-header">
-    <h1 id="community">Community</h1>
-  </div>
-  <div id="wordcount">
-    <p class="lead">Stay up to date on the development of Scale-Out Agile and reach out to the community with these helpful resources.</p>
-    <ul>
-<!--      <li>Read and subscribe to <a href="http://blog.getbootstrap.com/">The Official Bootstrap Blog</a>.</li> -->
-<!--      <li>Chat with fellow Bootstrappers using IRC in the <code>irc.freenode.net</code> server, in the <a href="irc://irc.freenode.net/#twitter-bootstrap">##twitter-bootstrap channel</a>.</li> -->
-<!--      <li>Find inspiring examples of people building with Bootstrap at the <a href="http://expo.getbootstrap.com">Bootstrap Expo</a>.</li> -->
-        <li>Contribute to the <a href="https://github.com/Scale-Out-Agile/Scale-Out-Agile.github.io/wiki">Scale-Out wiki</a>.</li>
-    </ul>
-<!--    <p>You can also follow <a href="https://twitter.com/twbootstrap">@twbootstrap on Twitter</a> for the latest gossip and awesome music videos.</p> -->
-  </div>
-</div>
-
-
-<!-- Translations -->
-<!-- <div class="bs-docs-section">
-  <div class="page-header">
-    <h1 id="translations">Translations</h1>
-  </div>
-  <p class="lead">Community members have translated Bootstrap's documentation into various langauges. None are officially supported and may not always be up to date.</p>
-  <ul>
-    <li><a href="http://v3.bootcss.com/">Bootstrap 中文文档 (Chinese)</a></li>
-    <li><a href="http://www.oneskyapp.com/docs/bootstrap/ru">Bootstrap по-русски (Russian)</a></li>
-    <li><a href="http://www.oneskyapp.com/docs/bootstrap/es">Bootstrap en Español (Spanish)</a></li>
-    <li><a href="http://twbs.site-konstruktor.com.ua">Bootstrap ua Українською (Ukrainian)</a></li>
-    <li><a href="http://www.oneskyapp.com/docs/bootstrap/fr">Bootstrap en Français (French)</a></li>
-  </ul>
-  <p>Have another language to add, or perhaps a different or better translation? Let us know by <a href="https://github.com/twbs/bootstrap/issues/new">opening an issue</a>.</p>
-</div>
--->

@@ -102,7 +102,7 @@ module.exports = function(grunt) {
 				tasks: ['jshint', 'nodeunit']
 			},
 			site: {
-				files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs'],
+				files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs', 'content/**/*.*'],
 				tasks: ['design']
 			}
 		},
