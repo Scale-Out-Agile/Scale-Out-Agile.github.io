@@ -1,6 +1,6 @@
 ---
 title: Home
-lead: <%= site.lead %> # this is used by the subhead component
+lead: <%= site.lead %>
 ---
 
 <!-- Header -->
@@ -9,6 +9,13 @@ lead: <%= site.lead %> # this is used by the subhead component
     <h1 id="welcome">Welcome!  {{> popover popover.anchors }}</h1>
   </div>
   <p class="lead">{{site.description}}</p>
+  
+{{#markdown}}
+# How do we do Agile development with 10,000 people?
+
+Large companies are facing an existential crisis today. Agile development methodologies have enabled small teams to work together and exceed the productivity of 100- or 1000-person organizations. App and service marketplaces have enabled small companies to share work, build on each other, and both cooperate and compete to dominate markets that they couldn't target individually. The markets where large companies retain an advantage are shrinking and moving towards commodities or high-end.
+
+{{/markdown}}
 </div>
 
 

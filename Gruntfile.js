@@ -56,7 +56,9 @@ module.exports = function(grunt) {
 				plugins: '<%= site.plugins %>'
 			},
 			site: {
-				files: { '<%= site.dest %>/': ['<%= site.templates %>/*.hbs'] }
+				files: {
+					'<%= site.dest %>/': ['<%= site.templates %>/*.hbs', '<%= site.content %>/*.md']
+				}
 			}
 		},
 
@@ -100,7 +102,7 @@ module.exports = function(grunt) {
 				tasks: ['jshint', 'nodeunit']
 			},
 			site: {
-				files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs'],
+				files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs', 'content/**/*.*'],
 				tasks: ['design']
 			}
 		},
